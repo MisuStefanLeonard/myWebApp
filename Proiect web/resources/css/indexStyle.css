@@ -27,7 +27,7 @@ body {
 
 .btn-design {
     background-color: white;
-    background-image: url(/resources/images/right-arrow.png);
+    background-image: url(../images/right-arrow.png);
     width: 37px;
     height: 35px;
     border-radius: 50%;
@@ -129,6 +129,7 @@ figure{
 
 .footer-contain{
     margin-top: 10px;
+    background-color: var(--culoare-border-navigatie);
 }
 
 .align-footer-text{
