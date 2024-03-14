@@ -1,3 +1,7 @@
+html{
+    font-size: 16px;
+}
+
 body {
     font-family: 'Roboto Condensed', sans-serif;
     --culoare-text: #000000;
@@ -12,7 +16,7 @@ body {
 
 
 .paragraph_design {
-    font-size: 18px;
+    font-size: 1.1em;
     font-weight: lighter;
     color: var(--culoare-text);
     font-style: normal;
@@ -47,12 +51,12 @@ body {
     gap: 10px;
     grid-template-columns: repeat(3,1fr);   /*1fr 1fr 1fr ;*/
     grid-template-areas: "welcome welcome welcome"
-                         "promotii promotii orar"
-                         "fig1 produse produse"
-                         "fig2 produse produse"
-                         "fig3 produse produse"
-                         "index-intrebari index-intrebari index-intrebari"
-                         "anunturi anunturi anunturi";
+                         "welcome welcome welcome"
+                         "timetable timetable videos"
+                         "users status videos "
+                         "users status videos "
+                         "announces eveniments webdata"
+                         ;
 }
 
 
@@ -64,36 +68,32 @@ body {
     margin: 0;
 }
 
+#videos{
+    grid-area: videos;
+}
 
 #welcome{
     grid-area: welcome;
 }
-#promotii{
-    grid-area: promotii;
+#eveniments{
+    grid-area: eveniments;
 }
-#anunturi{
-    grid-area: anunturi;
+#announces{
+    grid-area: announces;
 }
-#orar{
-    grid-area: orar;
+#timetable{
+    grid-area: timetable;
 }
  
-#fig1{
-    grid-area: fig1;
+#users{
+    grid-area: users;
 }
-#fig2{
-    grid-area: fig2;
+#status{
+    grid-area: status;
 }
-#fig3{
-    grid-area: fig3;
+#webdata{
+    grid-area: webdata;
 }
-#produse{
-    grid-area: produse;
-}
-#index-intrebari{
-    grid-area: index-intrebari;
-}
-
 
 .contain-img-writing {
    
@@ -136,24 +136,42 @@ body {
 }
 
 .taburi-iframe {
-    background-color: blue;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-end;
 }
+
 
 .iframe-text {
     color: var(--culoare-text);
     font-style: normal;
+    font-size: 1em;
+    border-left: 4px solid var(--culoare-highlight);
+    background-color: #FFA74A;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 3px;
+    padding-bottom: 5px;
+    border-top: 2px var(--culoare-highlight);
+    border-bottom: 2px var(--culoare-highlight);
+    border-right: 2px var(--culoare-highlight);
+    border-top-right-radius: 50%;
+    text-align: center;
+    transition: text-shadow 1.5s, color 1.5s, border-left 1.5s;
+}
+.iframe-text:hover{
+    text-shadow: 5px 0px 10px white;
+    color: white;
+    border-left: 2px solid white;
 }
 
 .iframe-text-near-video {
-    background-color: red;
-    width: 18%;
-    height: 45.5%;
-    font-size: 12.5px;
-    width: 100%;
+    width: 25%;
+    font-size: 0.7em;
 }
 
 .iframe-border{
-    border: 2px solid white;
+    border: 4px solid var(--culoare-highlight);
     
 }
 
@@ -243,27 +261,17 @@ figure{
     cursor: pointer;
 }
 
-
-@media screen and (max-width:1200px){
-
-    html{
-        font-size: 15px;
-    }
-
-    #grid-pagina{
-        grid-template-columns: repeat(2,1fr);   /*1fr 1fr 1fr ;*/
-        grid-template-areas: "welcome  welcome"
-                             "promotii promotii"
-                             "orar orar"
-                             "fig1 produse "
-                             "fig2 produse "
-                             "fig3 produse "
-                             "index-intrebari index-intrebari "
-                             "anunturi anunturi ";
-    }
+.table-container{
+    text-align: center;
 }
 
-@media screen and (max-width:800px){
+.center-workH{
+    text-align: center;
+}
+
+
+
+/* @media screen and (max-width:800px){
 
     html{
         font-size: 12px;
@@ -272,5 +280,5 @@ figure{
     #grid-pagina{
         display: block;
     }
-}
+} */
 

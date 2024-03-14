@@ -84,12 +84,13 @@
   }
 
   #tab-orar thead th:nth-child(2n+1){
-    background-color: aqua;
+    background-color: var(--culoare-border-navigatie);
   }
   #tab-orar thead th:nth-child(2n){
-    background-color: pink;
+    background-color: var(--culoare-footer);
   }
 
   #tab-orar{
+    margin: 0 auto;
     
   }
