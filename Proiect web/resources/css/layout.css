@@ -267,14 +267,36 @@ figure{
 
 
 
-/* @media screen and (max-width:800px){
+ @media screen and (max-width:700px){
 
     html{
-        font-size: 12px;
+        font-size: 14px;
     }
 
     #grid-pagina{
-        display: block;
+        display: grid;
+        gap: 5px;
+        grid-template-columns: repeat(3,1fr);   /*1fr 1fr 1fr ;*/
+        grid-template-areas: "welcome welcome welcome"
+                             "welcome welcome welcome"
+                             "timetable timetable videos"
+                             "users status videos "
+                             "users status videos "
+                             "announces eveniments webdata"
+                             ;
     }
-} */
+    
+    .iframe-border{
+        border: 4px solid var(--culoare-highlight);
+        width: 100px;
+        height: 100px;
+    }
+
+    .iframe-text-near-video {
+        width: 100%;
+        font-size: 0.3em;
+    }
+
+
+} 
 
