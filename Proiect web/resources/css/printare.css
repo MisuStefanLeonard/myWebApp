@@ -1,0 +1,124 @@
+@media print {
+
+	#absolut {
+        position: absolute;
+        display: block;
+        top: 0;
+        width: 50%; 
+        height: 20px;
+        right: 0;
+        overflow: visible;
+        border: 5px double black; 
+    }
+
+    #absolut::after {
+        content: "Element poziționat absolut pe a doua pagină.Pentru a vedea stilul de printare apăsați Ctrl+P.";
+        position: absolute;
+        font-size: 10px;
+        right: 0;
+        border: 5px double black;
+        width: 200px;
+        height: 35px;
+        display: inline-block;
+    }
+
+	h1{
+		page-break-after: always;
+		margin-top: 50%;
+		text-align:center;
+		margin-left:1cm;
+	}
+  #grid-pag{
+		font-size: 10px;
+		box-sizing:border-box;
+		page-break-before:always;
+		background-color: white;
+		
+		display:block;
+		}
+		html, body {
+        width: 210mm;
+       
+				overflow:visible !important;
+		}
+
+
+	
+	#grid-pag div:nth-child(5){
+		
+		page-break-before:always;
+	}
+
+	#link-top{
+        display: none;
+    }
+
+    img, video, iframe {
+        display: none;
+    }
+
+    h1{
+        font-size: 2.5em;
+        page-break-after: always;
+    }
+
+    .main-nav{
+        display: none;
+    }
+
+    figcaption {
+        display: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    
+		#watermark
+		{
+			display: block;
+			position: fixed;/*apare pe toate paginile*/
+			bottom:0;
+			color:rgba(0,0,0,0.4);
+			right:0;
+            height: 2cm;
+            width: 100px;
+            border: 5px solid black;
+		}
+		#watermark::after{
+			
+			opacity:0.65;
+			padding:5px;
+			display: block;
+			background: white;
+			border:2px solid black;
+			border-top-left-radius:10px;
+			border-bottom-left-radius:10px;
+			border-right:none;
+			content:"Dinulescu Mihnea Stefan";
+		}
+
+	#end{
+		page-break-before: always;
+	}
+}
+
+	@page {
+		size: A4 portrait;
+		margin-bottom:2cm;
+		margin-top:2cm;
+		counter-increment: page;
+			
+	}
+	@page:left{
+
+		margin-left:2.5cm;
+		margin-right:0.5cm;
+		border-radius: 20cm;
+	}
+	@page:right{
+
+		margin-right:2.5cm;
+		margin-left:0.5cm;
+	}

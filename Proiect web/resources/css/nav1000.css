@@ -1,0 +1,12 @@
+.main-nav{
+    --menu-height: 2.2em;
+    --li-width: 120px;
+}
+
+#home{
+    display: none;
+}
+
+#home-medium{
+    display: block;
+}
