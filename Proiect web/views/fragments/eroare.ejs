@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" content="Cofetaria Dulcelind ofera prajituri, torturi, produse de patiserie cu optiunea de achizitie online si livrare prin curier.">
+        <meta name="keywords" content="cofetarie, Dulcelind, prajituri, torturi, dulce, pateuri, produse">
+        <title>Metarax - eroare</title>
+        <link rel="stylesheet" type="text/css" href="/Proiect web/resources/css/error.css">
+        <%- include("../fragments/head.ejs");  %> 
+    </head>
+    <body>
+        
+    <%- include("../fragments/header.ejs");  %> 
+
+    <main>
+        <div id="err-coloane">
+			<div id="err-imag">
+				<img src="<%- locals.imagine %>" />
+			</div>
+			<section>
+				<h2><%- locals.titlu %></h2>
+				<p><%- locals.text %></p>
+			</section>
+		</div>
+    </main>
+    <%- include("../fragments/footer.ejs");  %> 
+    </body>
+</html>
