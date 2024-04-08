@@ -87,7 +87,7 @@
             border: 5px solid black;
 		}
 		#watermark::after{
-			
+			z-index: 999999;
 			opacity:0.65;
 			padding:5px;
 			display: block;
@@ -96,7 +96,7 @@
 			border-top-left-radius:10px;
 			border-bottom-left-radius:10px;
 			border-right:none;
-			content:"Dinulescu Mihnea Stefan";
+			content:"Misu Stefan-Leonard";
 		}
 
 	#end{

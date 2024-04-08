@@ -69,6 +69,50 @@
 }
 
 
+/* Basic link styling */
+a {
+  position: relative;
+}
+
+/* Visited link styling */
+a:visited {
+  color: var(--culoare-footer);
+}
+
+/* Hover effect with color blob */
+a[href^="http"]:hover {
+  background-image: radial-gradient(ellipse at center, orange 0%, orange 40%, transparent 80%, transparent 100%);
+  background-size: 0% 0%; /* Initial size of the oval */
+  transition: background-size 2s ease-in-out; /* Add transition for smooth animation */
+}
+
+/* Change background size to make the oval grow */
+a[href^="http"]:hover {
+  background-size: 100% 100%; /* Final size of the oval */
+}
+
+/* Adding a border on click (:active state) */
+a[href^="http"]:active {
+  border: 1px solid red; /* Adjusting border color to be blue */
+  padding: -1px; /* Adjust padding to compensate for the border thickness without shifting content */
+}
+
+/* Styling the element before the link */
+main a[href^="http"]::before {
+  content: "⮳"; /* Simbolul pentru linkuri externe */
+  font-size: 150%; /* Mărimea fontului pentru simbol */
+  margin-right: 0.3em;
+  color: orange; /* Default color */
+  transition: color 1s ease-in-out; /* Adding transition for smooth color change */
+}
+
+/* Change color of element before the link on hover */
+main a[href^="http"]:hover::before {
+  color: red; /* Change color to red on hover */
+}
+
+
+
 .arrow-a{
   bottom:0.1em;
   right: 0.3em;
@@ -78,6 +122,24 @@
   position: fixed;
 }
 
+#videoPlayer {
+  background-color: black; 
+  margin-top: 5%;
+  width: 100%;
+}
+
+
+track {
+  background-color: transparent;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+
+video::cue {
+  color: white;
+  background-color: transparent;
+  text-shadow: 2px 2px 2px black;
+}
   
   #tab-orar td, #tab-orar th{
     border: 1px solid black;
