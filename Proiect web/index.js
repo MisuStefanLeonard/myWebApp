@@ -79,9 +79,7 @@ app.get("/suma/:a/:b", function(req,res){
 
         try {
             res.render("pages"+req.url, function(err, rezHtml){
-                // console.log(rezHtml);
-                // console.log("Eroare:"+err)
-    
+            
                     if (err){
                         if (err.message.startsWith("Failed to lookup view")){
                             afisareEroare(res,404);
@@ -118,6 +116,7 @@ function initErori(){
 }
 
 function afisareEroare(res,_identificator,_titlu,_text,_imagine){
+    var cale = path.join(__dirname+"/views/pages/eroare.ejs");
     let eroare=obGlobal.obErori.info_erori.find(
         function(elem){
             return elem.identificator==_identificator;
@@ -125,7 +124,7 @@ function afisareEroare(res,_identificator,_titlu,_text,_imagine){
     )
     if(!eroare){
         let eroare_default=obGlobal.obErori.eroare_default;
-        res.render("/views/pages/eroare.ejs",{
+        res.render(cale,{
             titlu: _titlu || eroare_default.titlu ,
             text: _text || eroare_default.text ,
             imagine: _imagine || eroare_default.imagine,
@@ -134,7 +133,7 @@ function afisareEroare(res,_identificator,_titlu,_text,_imagine){
     else {
         if(eroare.status)
              res.status(eroare.identificator)
-        res.render("/views/pages/eroare.ejs",{
+        res.render(cale,{
             titlu: _titlu || eroare.titlu ,
             text: _text || eroare.text ,
             imagine: _imagine || eroare.imagine,
@@ -220,12 +219,6 @@ fs.watch(obGlobal.folderScss, function(eveniment, numeFis){
         }
     }
 })
-
-
-
-
-
-
 
 
 

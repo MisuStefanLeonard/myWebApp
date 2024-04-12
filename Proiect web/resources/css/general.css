@@ -69,46 +69,51 @@
 }
 
 
-/* Basic link styling */
+@media screen and (max-width:700px){
+
+
+} 
+
 a {
   position: relative;
 }
 
-/* Visited link styling */
 a:visited {
   color: var(--culoare-footer);
 }
 
-/* Hover effect with color blob */
-a[href^="http"]:hover {
+
+a[href^="http"]{
   background-image: radial-gradient(ellipse at center, orange 0%, orange 40%, transparent 80%, transparent 100%);
-  background-size: 0% 0%; /* Initial size of the oval */
-  transition: background-size 2s ease-in-out; /* Add transition for smooth animation */
+  background-position: center;
+  background-size: 0% 0%; 
+  transition: background-size 2s ease-in-out; 
+  background-repeat: no-repeat;
 }
 
-/* Change background size to make the oval grow */
+
 a[href^="http"]:hover {
-  background-size: 100% 100%; /* Final size of the oval */
+  background-size: 100% 100%; 
 }
 
-/* Adding a border on click (:active state) */
+
 a[href^="http"]:active {
-  border: 1px solid red; /* Adjusting border color to be blue */
-  padding: -1px; /* Adjust padding to compensate for the border thickness without shifting content */
+  border: 2px solid black; 
+  padding: -1px; 
 }
 
-/* Styling the element before the link */
+
 main a[href^="http"]::before {
-  content: "⮳"; /* Simbolul pentru linkuri externe */
-  font-size: 150%; /* Mărimea fontului pentru simbol */
+  content: "⮳"; 
+  font-size: 150%; 
   margin-right: 0.3em;
-  color: orange; /* Default color */
-  transition: color 1s ease-in-out; /* Adding transition for smooth color change */
+  color: orange; 
+  transition: color 1s ease-in-out;
 }
 
-/* Change color of element before the link on hover */
+
 main a[href^="http"]:hover::before {
-  color: red; /* Change color to red on hover */
+  color: red; 
 }
 
 
@@ -131,12 +136,12 @@ main a[href^="http"]:hover::before {
 
 track {
   background-color: transparent;
-  color: white;
+  color: black;
   text-shadow: 2px 2px 2px black;
 }
 
 video::cue {
-  color: white;
+  color: black;
   background-color: transparent;
   text-shadow: 2px 2px 2px black;
 }

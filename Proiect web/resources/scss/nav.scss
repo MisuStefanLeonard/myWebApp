@@ -35,11 +35,21 @@ $culoare-text: black;
                 transition: all 1s linear;
 
                 &:hover {
-                    background-color: white;
+                    
                     color: chocolate;
                 }
             }
 
+            &:hover ul {
+                display: block;
+                position: absolute;
+                z-index: 100;
+                margin: 0;
+                padding: 0;
+                animation: sub-menu-animation 1s linear 1 forwards;
+                transform-origin: center top;
+            }
+            
             ul {
                 list-style-type: none;
                 display: none;
@@ -48,15 +58,6 @@ $culoare-text: black;
                 opacity: 0;
                 transform: scaleY(0);
                 
-                &:hover {
-                    display: block;
-                    position: absolute;
-                    z-index: 100;
-                    margin: 0;
-                    padding: 0;
-                    animation: sub-menu-animation 1s linear 1 forwards;
-                    transform-origin: center top;
-                }
             }
         }
     }

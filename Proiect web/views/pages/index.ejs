@@ -20,11 +20,6 @@
         <div id="grid-pagina">
             <section id="welcome" class="contain-section">
                 <h2 class="subTitle">Welcome</h2>
-                <button
-              type
-              ="button"
-              class
-              ="btn btn-primary btn-lg">Stil-1-mare</button>
                 <p class="paragraph_design">
                     Oferim tot felul de <b>unelte casnice</b>, de gradina ca:
                     <strong>cuptoare,prajitoare,fierbatoare,incalzitoare</strong> cat si
@@ -64,20 +59,21 @@
                   ></iframe>
                 </div>
                 <div id="videoPlayer">
-                  <video id="videoPlayer" width="100%" controls poster="/Proiect web/resources/videos/poster.png" preload="none">
+                  <video id="videoPlayer" width="100%" controls poster="/resources/videos/poster.png" preload="none">
                   
-                    <source src="/Proiect web/resources/videos/video1.mp4" type="video/mp4">
+                    <source src="/resources/videos/video1.mp4" type="video/mp4">
                    
-                    <source src="/Proiect web/resources/videos/video1.mov" type="video/mov">
+                    <source src="/resources/videos/video1.mov" type="video/mov">
         
                     
-                    <track src="/Proiect web/resources/vtt/ROSUB.vtt" kind="subtitles" srclang="ro" label="Română" default>
+                    <track src="/resources/vtt/ROSUB.vtt" kind="captions" srclang="ro" label="Română" default>
                     
-                    <track src="/Proiect web/resources/vtt/ENSUB.vtt" kind="subtitles" srclang="en" label="English">
+                    <track src="/resources/vtt/ENSUB.vtt" kind="captions" srclang="en" label="English">
         
                     Your browser does not support the video tag.
                 </video>
                 </div>
+            </section>
             <section id="promotions" class="contain-section">
                 <h2 class="subTitle">Eveniments</h2>
                 <article>
@@ -283,6 +279,7 @@
               <% } %>
           </div>
       </section>
+
     </main>
     <br>
     <%- include("../fragments/footer.ejs") %>

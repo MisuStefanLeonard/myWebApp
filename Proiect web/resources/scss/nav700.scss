@@ -1,0 +1,73 @@
+
+$menu-height: 50px;
+
+
+#hamburger {
+    display: block !important;
+    > img {
+        height: var(--menu-height);
+        display: block;
+    }
+}
+
+
+ul.main-list {
+    display: none !important;
+    position: absolute;
+    width: 100% !important;
+}
+
+#ch-menu:checked + ul.main-list {
+    display: block !important;
+    z-index: 2;
+    position: relative;
+    animation: apare_meniu_p 0.7s linear forwards !important;
+}
+
+#ch-menu:checked + ul.main-list > li > div, #ch-menu:checked + ul.main-list > li > a {
+    z-index: 2;
+    position: relative;
+    transform-origin: left center;
+    animation: apare_meniu_p_btn 0.3s linear forwards !important;
+}
+
+nav ul.main-list li {
+    width: 100% !important;
+    background-color: orangered;
+}
+
+
+nav ul.main-list > li ul {
+    position: absolute;
+    width: 100%;
+    z-index: 200;
+    opacity: 1 !important;
+}
+
+#ch-menu:checked + ul.main-list > li ul > * {
+    position: relative;
+    z-index: 200;
+}
+
+nav ul.main-list > li:hover > ul {
+    z-index: 200;
+}
+
+/* Keyframes */
+@keyframes apare_meniu_p {
+    0% {
+        opacity: 0;
+    } 
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes apare_meniu_p_btn {
+    0% {
+        transform: scale(0, 0);
+    } 
+    100% {
+        transform: scale(1, 1);
+    }
+}

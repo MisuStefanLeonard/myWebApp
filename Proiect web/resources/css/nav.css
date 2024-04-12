@@ -32,8 +32,16 @@
   transition: all 1s linear;
 }
 .main-nav .main-list li div:hover, .main-nav .main-list li a:hover {
-  background-color: white;
   color: chocolate;
+}
+.main-nav .main-list li:hover ul {
+  display: block;
+  position: absolute;
+  z-index: 100;
+  margin: 0;
+  padding: 0;
+  animation: sub-menu-animation 1s linear 1 forwards;
+  transform-origin: center top;
 }
 .main-nav .main-list li ul {
   list-style-type: none;
@@ -42,15 +50,6 @@
   background-color: orangered;
   opacity: 0;
   transform: scaleY(0);
-}
-.main-nav .main-list li ul:hover {
-  display: block;
-  position: absolute;
-  z-index: 100;
-  margin: 0;
-  padding: 0;
-  animation: sub-menu-animation 1s linear 1 forwards;
-  transform-origin: center top;
 }
 
 @keyframes sub-menu-animation {
