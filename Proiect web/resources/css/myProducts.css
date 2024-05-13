@@ -1,0 +1,124 @@
+main{
+    padding: 2rem;
+
+}
+
+.contain-filters{
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    box-shadow: 0px 0px 5px 2px orange;
+    padding: 0.5em 1em;
+}
+.contain-filters2{
+    padding: 0.5em 1em;
+}
+
+.grid-produse{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+@media screen and (max-width:700px) {
+    .grid-produse{
+        display: block;
+    }
+}
+
+.grid-produse .produs{
+    box-shadow: 0px 0px 0.8rem 0.3rem orange;
+    text-align: center;
+}
+
+.grid-produse .produs h3{
+    background-color: orangered;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+
+.grid-produse .produs h3 a{
+    color:black;
+}
+.grid-produse .produs h3 a:hover{
+    color:white;
+}
+.grid-produse .produs figure{
+    text-align: center;
+    
+}
+.grid-produse .produs figure img{
+    border:1px solid black;
+    
+}
+.grid-produse .produs .info-prod{
+    display:inline-block;
+    background-color: var(--cl-marcare);
+    text-align: center;
+}
+.grid-produse .produs .info-prod p{
+    width:100%;
+    text-align:center;
+    font-weight:bold;
+   
+}
+
+.grid-produse .produs p.categorie{
+    text-align:center;
+    font-weight:bold;
+}
+
+.info-produse{
+    background-color: var(--cl-marcare);
+    padding:0.2rem;
+    box-shadow: 0px 0px 0.5rem 0.15rem grey;
+}
+
+.produs{
+    position: relative;
+}
+.selecteaza-cos{
+    display: inline-block;
+    background-color: red;
+    position:absolute;
+    bottom:0.5rem;
+    right:0.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    padding:0.3rem;
+    border:1px solid transparent;
+}
+
+.selecteaza-cos:hover{
+    background-color: var(--cl-marcare);
+    
+    border:1px solid  var(--culoare-mov);
+}
+
+hr {
+    width: 50%;
+    font-weight: bold;
+    position: relative;
+    display: block;
+    height: 5px; 
+    background-color: orange; 
+}
+
+hr::before,
+hr::after {
+    content: "\2655"; 
+    font-size: 30px;
+    position: absolute;
+   
+    transform: translateY(-50%); 
+}
+
+hr::before {
+    left: -20px; 
+}
+
+hr::after {
+    right: -20px; 
+}

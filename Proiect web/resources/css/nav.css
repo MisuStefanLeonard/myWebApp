@@ -41,7 +41,7 @@
   margin: 0;
   padding: 0;
   animation: sub-menu-animation 1s linear 1 forwards;
-  transform-origin: center top;
+  transform-origin: left top;
 }
 .main-nav .main-list li ul {
   list-style-type: none;

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" content="Metarax ofera tot felul de unelte casnice,de gradina cat si generale.Livrare prin curier oriunde in tara.">
+        <meta name="keywords" content="unelte,unelte de gradina, unelte de bucatarie, generale, livrare, curier">
+        <link rel="stylesheet" href="/resources/css/myProducts.css" type="text/css" />
+        <title>Metarax - produse</title>
+        <%- include("../fragments/head") %>     
+        <script type="text/javascript" src=/resources/js/myProducts.js></script>
+
+    </head>
+    <body>
+    <%- include("../fragments/header") %>
+
+    <main>
+        <label> Nume: <input type="text" id="inp-nume"></label>
+        <!--<label> Maxim calorii: <input type="number" id="inp-calorii" value="10000"></label>-->
+        <div class="contain-filters"> Masa:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
+            <div class="contain-filters2">
+                <p><label>Mica (greutate &lt; 350)
+                    <input id="i_rad1"  name="gr_rad" value="0:350" type="radio"/>
+                </label></p>
+                <p><label>Medie (350 &le; greutate &lt; 700)
+                    <input id="i_rad2"  name="gr_rad" value="350:700" type="radio"/>
+                </label>
+                <p><label>Ridicata (700 &le; greutate)
+                    <input id="i_rad3" name="gr_rad" value="700:1000000000" type="radio"/>
+                </label>
+                <p><label>Toate
+                    <input id="i_rad4" checked name="gr_rad" value="toate" type="radio"/>
+                </label>
+            </div>
+        </div>
+
+        <div class="contain-filters"> Uz multiplu:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
+            <div class="contain-filters2">
+                <p><label>Da
+                    <input id="i_rad1_masa"  name="gr_rad_masa" value="true"  type="radio"/>
+                </label></p>
+                <p><label>Nu
+                    <input id="i_rad2_masa"  name="gr_rad_masa" value="false"  type="radio"/>
+                </label>
+                <p><label>Toate
+                    <input id="i_rad3_masa" checked name="gr_rad_masa" value="toate" type="radio"/>
+                </label>
+            </div>
+        </div>
+
+        <div class="contain-filters">
+                <label> Pret minim: <input type="range" id="inp-pret" value="0" min="0"  max="100"> <span id="infoRange">(0)</span></label>
+        </div>
+       
+        <div class="contain-filters">
+            <label> Dimensiune minima: <input type="range" id="inp-dimensiune" value="0" min="0"  max="100" step="1"> <span id="infoRange2">(0)</span></label>
+        </div>
+        <div class="contain-filters">
+            <label>Select simplu:
+                <select id="inp-categorie">
+                    <option id="sel-toate" selected value="toate">toate</option>
+                    <% for (let opt of locals.optiuni) { %>
+                        <option value="<%- opt.unnest %>"><%- opt.unnest %> </option>
+                    <% } %>
+                </select>
+            </label>
+        </div>
+        <div class="contain-filters">
+            
+        </div>
+        
+        <p>
+        <button id="filtrare" class="btn btn-outline-warning">Filtreaza</button> 
+
+        <button id="resetare" class="btn btn-outline-warning">Reseteaza</button><br/>
+        <br/>
+        <button id="sortCrescNume" class="btn btn-outline-warning">Sorteaza crescator dupa dimensiune si nume </button>
+        <button id="sortDescrescNume" class="btn btn-outline-warning">Sorteaza descrescator dupa dimensiune si nume</button>
+        
+        </p>
+        <hr>
+        
+        <button id="calcul-cost" class="btn btn-outline-danger">Calculeaza costul produselor</button>
+        <section id="produse">
+            <h2>Produse</h2>
+            <div class="grid-produse">
+                <% for( let prod of locals.produse) { %>
+                    <article class="produs" >
+                        <h3 class="nume">Nume: <a href="/myProduct/<%-prod.id_produs %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
+                        <div class="info-prod">
+                            <p class="pret">Pret: <span class="val-pret"><%- prod.pret%></span></p>
+                            <p class="descriere">Descriere: <%- prod.descriere%></p>
+                            <p class="tip_produs">Tip produs: <%- prod.tip_produs%></p>
+                            <p class="masa">Masa: <span class="val-masa"><%- prod.masa%></span></p>
+                            <p class="dimensiune">Dimensiune: <span class="val-dimensiune"><%- prod.dimensiune%></span></p>
+                            <p class="uz_multiplu">Uz multiplu: <span class="val-uz_multiplu"> <%- prod.uz_multiplu%></span></p>
+                        </div>
+                        <p class="categorie">Categorie:<span class="val-categorie"><%- prod.categorie_prod%></span></p>
+                        <figure>
+                            <a href="/myProduct/<%-prod.id_produs %>" ><img src="/resources/images/myGallery/<%- prod.imagine %>" style="width:50%;height:auto;" alt="[imagine <%- prod.nume %>]" /></a>
+                        </figure>
+                        <label class="selecteaza-cos">
+                            Selectează:<br/>
+                            <input type="checkbox" class="select-cos" value="<%-prod.id_produs %>" autocomplete="off">
+                        </label>
+                    </article>
+                <% }%>
+            </div>
+        </section>
+    </main>
+
+    <%- include("../fragments/footer") %>
+    </body>
+</html>

@@ -16,10 +16,15 @@
   </head>
     <body>
     <%- include("../fragments/header.ejs") %>
-    <main>
+    <main class="contain-main">
         <div id="grid-pagina">
             <section id="welcome" class="contain-section">
+              <div id="text">
                 <h2 class="subTitle">Welcome</h2>
+                <div id="text-reflectat">
+                  Welcome
+                </div>
+              </div>
                 <p class="paragraph_design">
                     Oferim tot felul de <b>unelte casnice</b>, de gradina ca:
                     <strong>cuptoare,prajitoare,fierbatoare,incalzitoare</strong> cat si
@@ -194,20 +199,20 @@
             </section>
               <section class="contain-section" id="users">
                 <h2 class="subTitle">Online users</h2>
-                <p>Ip: <%- locals.ip %></p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                <p class="paragraph_design">Ip: <%- locals.ip %></p>
+                <p class="paragraph_design">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
                    eu fugiat nulla pariatur. Excepteur sint occaecat 
                    cupidatat non proident, sunt in culpa qui officia deserunt 
                    mollit anim id est laborum.
                 </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                <p class="paragraph_design">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
                   eu fugiat nulla pariatur. Excepteur sint occaecat 
                   cupidatat non proident, sunt in culpa qui officia deserunt 
                   mollit anim id est laborum.
                </p>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+               <p class="paragraph_design">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
                 eu fugiat nulla pariatur. Excepteur sint occaecat 
                 cupidatat non proident, sunt in culpa qui officia deserunt 
@@ -216,19 +221,19 @@
               </section>
               <section class="contain-section" id="status">
                 <h2 class="subTitle">Your status & Statistics</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                <p class="paragraph_design">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
                    eu fugiat nulla pariatur. Excepteur sint occaecat 
                    cupidatat non proident, sunt in culpa qui officia deserunt 
                    mollit anim id est laborum.
                 </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                <p class="paragraph_design">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                   sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
                   eu fugiat nulla pariatur. Excepteur sint occaecat 
                   cupidatat non proident, sunt in culpa qui officia deserunt 
                   mollit anim id est laborum.
                </p>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+               <p class="paragraph_design">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
                 eu fugiat nulla pariatur. Excepteur sint occaecat 
                 cupidatat non proident, sunt in culpa qui officia deserunt 
@@ -237,48 +242,60 @@
             </section>
             <section class="contain-section" id="webdata">
               <h2 class="subTitle">Web & Server data</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              <p class="paragraph_design">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
                  eu fugiat nulla pariatur. Excepteur sint occaecat 
                  cupidatat non proident, sunt in culpa qui officia deserunt 
                  mollit anim id est laborum.
               </p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+              <p class="paragraph_design">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                 sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
                 eu fugiat nulla pariatur. Excepteur sint occaecat 
                 cupidatat non proident, sunt in culpa qui officia deserunt 
                 mollit anim id est laborum.
              </p>
-             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+             <p class="paragraph_design">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
               eu fugiat nulla pariatur. Excepteur sint occaecat 
               cupidatat non proident, sunt in culpa qui officia deserunt 
               mollit anim id est laborum.
-           </p>
+           </p class="paragraph_design">
           </section>
         </div>
         <section id="galerie-statica" class="contain-section">
           <h2>Galerie</h2>
           <div id="grid-galerie">
               <% 
-                  var vLuni=["ianuarie", "februarie", "martie", "aprilie", "iunie", "iulie"];
-                  var d=new Date();
-                  var lunaCurenta=vLuni[d.getMonth()];
-                  for (let imag of locals.imagini) { 
-                      if (imag?.luni?.includes(lunaCurenta)) {
-                      %>
-                          <figure>
-                              <picture>
-                                  <source srcset="<%= imag.fisier_mediu %>" media="(max-width:1200px)"/>
-                                  <img src="<%= imag.fisier %>" alt="prajituri">
-                              </picture>
-                          
-                          <figcaption><%= imag.descriere%></figcaption>
-                          </figure>
-                  <% } %>
-              <% } %>
+                  var d = new Date();
+                  var oraCurenta = d.getHours();
+                  var imagini = locals.imagini;
+                  for (let imag of imagini) {
+                      var intervale = imag.intervale_ore;
+                      if (intervale) {
+                          for (let interval of intervale) {
+                              var oraInceput = interval[0];
+                              var oraSfarsit = interval[1];
+                              if (oraCurenta >= oraInceput && oraCurenta <= oraSfarsit) {
+              %>
+                                  <figure>
+                                      <picture>
+
+                                          <source srcset="<%= imag.fisier_mediu %>" media="(max-width:400px)"/>
+                                          <img src="<%= imag.cale_relativa %>" alt="<%= imag.alternativ %>">
+                                      </picture>
+                                       <figcaption> <%= imag.descriere_imag %></figcaption>
+                                  </figure>
+              <%  
+                              
+                                  break;
+                              }
+                          }
+                      }
+                  }
+              %>
           </div>
       </section>
+      <div id="imagine"></div>
 
     </main>
     <br>

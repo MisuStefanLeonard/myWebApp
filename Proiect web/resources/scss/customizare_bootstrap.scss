@@ -1,5 +1,13 @@
-@use '../../node_modules/bootstrap/scss/bootstrap.scss' with 
-(
-    $primary: red,
-    $secondary:purple
-)
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import '../../node_modules/bootstrap/scss/bootstrap'; // Importă fișierul bootstrap.scss
+
+$primary: orange;
+$secondary: purple;
+$font-sans-serif:'Roboto Condensed', sans-serif;
+
+// Definește variabilele Bootstrap aici dacă este nevoie
+
+// Alte personalizări Bootstrap
+
+// Restul codului personalizat

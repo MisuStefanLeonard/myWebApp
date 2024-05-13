@@ -3,7 +3,20 @@ const fs= require('fs');
 const path=require('path');
 const sharp=require('sharp');
 const sass=require('sass');
-// const ejs=require('ejs');
+const ejs=require('ejs');
+
+const Client = require('pg').Client;
+
+var client = new Client({database:"web",
+                        user:"stefan1",
+                        password:"admin12@",
+                        host:"localhost",
+                        port:5432});
+ client.connect();
+
+ client.query("select * from unnest(enum_range(null:categ_prajitura))", function(err,rez){
+ })
+ 
 
 obGlobal={
     obErori:null,
@@ -31,36 +44,12 @@ app.use("/resources", express.static(__dirname+"/resources"));
 app.use("/node_modules", express.static(__dirname+"/node_modules"));
 
 
-//app.get("/",function(req,res){
-//res.sendFile(__dirname+"/index.html")
-//})
-
 app.get(["/", "/home","/index"],function(req,res){
     res.render("pages/index",{ip: req.ip,imagini:obGlobal.obImagini.imagini});
 })
 
 
-
-//trimiterea unui mesaj fix
-app.get("/cerere", function(req,res){
-res.send("<b>Hello </b><span style='color:red'>world!</span>");
-})
-
-//trimitere mesaj dinamic
-app.get("/data", function(req,res,next){
-    res.write("Data :");
-    next();
-    });
-
-    app.get("/data", function(req,res){
-        res.write(""+new Date());
-        res.end();
-        });
 //trimitere mesaj dinamic in functie de parametri
-app.get("/suma/:a/:b", function(req,res){
-    var suma=parseInt(req.params.a)+parseInt(req.params.b)
-    res.send(""+suma);
-     });
 
      app.get("/*.ejs",function(req,res){
         afisareEroare(res,400);
@@ -74,6 +63,72 @@ app.get("/suma/:a/:b", function(req,res){
         afisareEroare(res,403);
      });
 
+     // gradina mea !!
+     app.get("/myProducts", function(req, res){
+        console.log(req.query)
+        var conditieQuery="";
+        if (req.query.tip){
+            conditieQuery=` where tip_produs='${req.query.tip}'`
+        }
+        client.query("select * from unnest(enum_range(null::categorie_produs))", function(err, rezOptiuni){
+    
+            client.query(`select * from webbd.produse ${conditieQuery}`, function(err, rez){
+                if (err){
+                    console.log(err);
+                    afisareEroare(res, 2);
+                }
+                else{
+                    res.render("pages/myProducts", {produse: rez.rows, optiuni:rezOptiuni.rows})
+                }
+            })
+        });
+    })
+
+    app.get("/myProduct/:id_produs", function(req, res) {
+        client.query('SELECT * FROM webbd.produse WHERE id_produs = $1', [req.params.id_produs], function(err, rez) {
+            if (err) {
+                console.log(err);
+                afisareEroare(res, 2);
+            } else {
+                res.render("pages/myProduct", { prod: rez.rows[0] });
+            }
+        });
+    });
+    
+
+
+     app.get("/produse", function(req, res){
+        console.log(req.query)
+        var conditieQuery="";
+        if (req.query.tip){
+            conditieQuery=` where tip_produs='${req.query.tip}'`
+        }
+        client.query("select * from unnest(enum_range(null::categ_prajitura))", function(err, rezOptiuni){
+    
+            client.query(`select * from webbd.prajituri ${conditieQuery}`, function(err, rez){
+                if (err){
+                    console.log(err);
+                    afisareEroare(res, 2);
+                }
+                else{
+                    res.render("pages/produse", {produse: rez.rows, optiuni:rezOptiuni.rows})
+                }
+            })
+        });
+    })
+
+     
+
+     app.get("/produs/:id" , function(req,res){
+        client.query(`select * from webbd.produse where id = ${req.params.id_produs}`, function(err,rez){
+            if(err){
+                console.log(err);
+                afisareEroare(res,2);
+            }else{
+                res.render("views/produse" , {prod: rez.rows[0]})
+            }
+        })
+     })
 
      app.get("/*", function(req, res){
 
@@ -106,13 +161,11 @@ app.get("/suma/:a/:b", function(req,res){
 
 function initErori(){
     var continut = fs.readFileSync(path.join(__dirname+"/views/json/erori.json")).toString("utf-8");
-    console.log(continut);
     obGlobal.obErori=JSON.parse(continut);
     for(let eroare of obGlobal.obErori.info_erori){
         eroare.imagine=path.join(obGlobal.obErori.cale_baza,eroare.imagine)
     }
     obGlobal.obErori.eroare_default=path.join(obGlobal.obErori.cale_baza,obGlobal.obErori.eroare_default.imagine);
-    console.log(obGlobal.obErori);
 }
 
 function afisareEroare(res,_identificator,_titlu,_text,_imagine){
@@ -157,15 +210,14 @@ function initImagini(){
 
     //for (let i=0; i< vErori.length; i++ )
     for (let imag of vImagini){
-        [numeFis, ext]=imag.fisier.split(".");
-        let caleFisAbs=path.join(caleAbs,imag.fisier);
+        [numeFis, ext]=imag.cale_relativa.split(".");
+        let caleFisAbs=path.join(caleAbs,imag.cale_relativa);
         let caleFisMediuAbs=path.join(caleAbsMediu, numeFis+".webp");
-        sharp(caleFisAbs).resize(300).toFile(caleFisMediuAbs);
+        sharp(caleFisAbs).resize(400).toFile(caleFisMediuAbs);
         imag.fisier_mediu=path.join("/", obGlobal.obImagini.cale_galerie, "mediu",numeFis+".webp" )
-        imag.fisier=path.join("/", obGlobal.obImagini.cale_galerie, imag.fisier )
+        imag.cale_relativa=path.join("/", obGlobal.obImagini.cale_galerie, imag.cale_relativa )
         
     }
-    console.log(obGlobal.obImagini);
 }
 initImagini();
 

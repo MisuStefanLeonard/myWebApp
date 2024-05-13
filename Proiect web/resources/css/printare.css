@@ -78,7 +78,7 @@
 		#watermark
 		{
 			display: block;
-			position: fixed;/*apare pe toate paginile*/
+			position: fixed;
 			bottom:0;
 			color:rgba(0,0,0,0.4);
 			right:0;

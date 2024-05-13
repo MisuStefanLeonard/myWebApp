@@ -1,0 +1,55 @@
+{
+"cale_galerie":"resources/images/myGallery",
+"imagini": [
+    {
+        "cale_relativa":"covor_cauciuc.jpeg",
+        "nume_imagine":"Covor cauciuc",
+        "alt":"covor cauciuc"
+    },
+    {
+        "cale_relativa":"fertilizant.jpeg",
+        "nume_imagine":"Fertilizant",
+        "alt":"fertilizant"
+    },
+    {
+        "cale_relativa":"fertilizatorgranulat.jpeg",
+        "nume_imagine":"Fertilizator granulat",
+        "alt":"Fertilizator granulat"
+    },
+    {
+        "cale_relativa":"foarfeca_viu.jpeg",
+        "nume_imagine":"Foarfeca de taiat gardul viu",
+        "alt":"Foarfeca de taiat gardul viu"
+    },
+    {
+        "cale_relativa":"furtungradina.jpeg",
+        "nume_imagine":"Furtun gradina",
+        "alt":"Furtun gradina"
+    },
+    {
+        "cale_relativa":"hammer2.jpeg",
+        "nume_imagine":"Ciocan gradina",
+        "alt":"Ciocan gradina"
+    },
+    {
+        "cale_relativa":"ingrasamant_organic.jpeg",
+        "nume_imagine":"Ingrasamant organic",
+        "alt":"Ingrasamant organic"
+    },
+    {
+        "cale_relativa":"pulvertizator.jpeg",
+        "nume_imagine":"Pulvertizator",
+        "alt":"pulvertizator"
+    },
+    {
+        "cale_relativa":"scaun.jpeg",
+        "nume_imagine":"Scaun gradina",
+        "alt":"scaun"
+    },
+    {
+        "cale_relativa":"set_unelte.jpeg",
+        "nume_imagine":"Set unelte",
+        "alt":"set_unelete"
+    }
+]
+}

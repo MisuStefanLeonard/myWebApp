@@ -2,38 +2,86 @@
 	"cale_galerie":"resources/images/galerie",
 	"imagini": [
 		{
-			"fisier":"briose-frisca.png",
-			"descriere":"Brioșe",
-			"luni":["martie","februarie","noiembrie","aprilie"]
-		},
-		{
-			"fisier":"clatite.png",
-			"descriere":"Clătite cu dulceață",
-			"luni":["ianuarie","februarie","iunie"]
+			"cale_relativa":"foarfeca_taiat.png",
+			"nume_imag":"Foarfeca de taiat pomi",
+			"alternativ":"foarfeca", 
+			"descriere_imag":"Foarfeca de taiat pomi",
+			"intervale_ore":[[2,7],[13,18],[21,24],[0,24]]
 			
 		},
 		{
-			"fisier":"gogosi.png",
-			"descriere":"Gogoși glazurate",
-			"luni":["ianuarie","noiembrie","iunie","martie","aprilie"]
-		},
-		{
-			"fisier":"tort-scortisoara.png",
-			"descriere":"Tort cu scorțisoară",
+			"cale_relativa":"foarfeca_taiat.png",
+			"nume_imag":"Foarfeca de taiat pomi",
+			"alternativ":"foarfeca", 
+			"descriere_imag":"foarfeca",
+			"intervale_ore":[[1,5],[9,11],[17,12],[0,24]]
 			
-			"luni":["noiembrie","aprilie"]
 		},
 		{
-			"fisier":"prajitura-ciocolata.png",
-			"descriere":"Prăjitură cu ciocolată"
+			"cale_relativa":"foarfeca_taiat.png",
+			"nume_imag":"Foarfeca de taiat pomi",
+			"alternativ":"foarfeca", 
+			"descriere_imag":"foarfeca",
+			"intervale_ore":[[5,12],[7,8],[20,3],[0,24]]
+			
 		},
 		{
-			"fisier":"tarta-afine.png",
-			"descriere":"Tartă cu afine"
+			"cale_relativa":"foarfeca_taiat.png",
+			"nume_imag":"Foarfeca de taiat pomi",
+			"alternativ":"foarfeca", 
+			"descriere_imag":"foarfeca",
+			"intervale_ore":[[1,3],[5,7],[9,15],[0,24]]
+			
 		},
 		{
-			"fisier":"tort-trandafiri.png",
-			"descriere":"Tort special"
+			"cale_relativa":"foarfeca_taiat.png",
+			"nume_imag":"Foarfeca de taiat pomi",
+			"alternativ":"foarfeca", 
+			"descriere_imag":"foarfeca",
+			"intervale_ore":[[5,10],[12,18],[21,23],[0,24]]
+			
+		},
+		{
+			"cale_relativa":"foarfeca_taiat.png",
+			"nume_imag":"Foarfeca de taiat pomi",
+			"alternativ":"foarfeca", 
+			"descriere_imag":"foarfeca",
+			"intervale_ore":[[3,5],[9,12],[15,16],[0,24]]
+			
+		},
+		{
+			"cale_relativa":"foarfeca_taiat.png",
+			"nume_imag":"Foarfeca de taiat pomi",
+			"alternativ":"foarfeca", 
+			"descriere_imag":"foarfeca",
+			"intervale_ore":[[5,6],[15,18],[19,21],[0,24]]
+			
+		},
+		{
+			"cale_relativa":"foarfeca_taiat.png",
+			"nume_imag":"Foarfeca de taiat pomi",
+			"alternativ":"foarfeca", 
+			"descriere_imag":"foarfeca",
+			"intervale_ore":[[2,5],[3,9],[11,14],[0,24]]
+			
+		},
+		{
+			"cale_relativa":"foarfeca_taiat.png",
+			"nume_imag":"Foarfeca de taiat pomi",
+			"alternativ":"foarfeca", 
+			"descriere_imag":"foarfeca",
+			"intervale_ore":[[2,5],[3,9],[11,14],[0,24]]
+			
+		},
+		{
+			"cale_relativa":"foarfeca_taiat.png",
+			"nume_imag":"Foarfeca de taiat pomi",
+			"alternativ":"foarfeca", 
+			"descriere_imag":"foarfeca",
+			"intervale_ore":[[2,5],[3,9],[11,14],[0,24]]
+			
 		}
 	]
 }
+
+
