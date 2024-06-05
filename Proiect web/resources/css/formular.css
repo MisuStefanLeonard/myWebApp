@@ -1,0 +1,23 @@
+.father-form-contain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px orange solid;
+    padding: 2em 2em;
+    height: 100vh; 
+    background-color: rgb(245, 228, 198) ;
+}
+
+.child-form-contain {
+    border: 2px whitesmoke solid;
+    width: 50%;
+    text-align: center;
+    padding: 1em 1em;
+    box-shadow: 10px 10px 10px 10px orangered;
+}
+
+.label-design{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    color: orangered;
+}

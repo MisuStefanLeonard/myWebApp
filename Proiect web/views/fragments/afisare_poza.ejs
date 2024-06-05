@@ -1,0 +1,13 @@
+<% if (locals.utilizator) { %>
+    <div class="user-info">
+        <p style="padding: 2em;">Bine ai venit, <%= locals.utilizator.username %>!</p>
+        <% if (locals.utilizator.poza) { %>
+            <img style="width: 200px;height: 200px;" src="/<%= locals.utilizator.poza %>" alt="poza utilizator">
+        <% } else { %>
+            <p>Nu ai o poza de profil.</p>
+        <% } %>
+    </div>
+<% } %>
+
+
+    

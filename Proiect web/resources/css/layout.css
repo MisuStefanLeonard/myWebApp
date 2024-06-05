@@ -48,7 +48,6 @@ body {
 }
 
 .theme-toggle i:last-child {
-    /* left: 50%; */
     transform: translateX(100%); 
 }
 

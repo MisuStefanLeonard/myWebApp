@@ -1,0 +1,13 @@
+.main-contain{
+    margin: 2em 2em ;
+    padding: 1em 1em;
+
+}
+
+
+#produse td, #produse th{
+	border:1px solid black;
+	padding:5px;
+	
+}
+

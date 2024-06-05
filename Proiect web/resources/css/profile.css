@@ -1,0 +1,11 @@
+.contain-profile{
+    padding: 2em 2em;
+    text-align: center;
+    background-color: whitesmoke;
+    opacity: 0.5;
+}
+
+.imgstyle{
+    width: 3%;
+    height: 3%;
+}

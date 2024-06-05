@@ -1,0 +1,24 @@
+<head>
+    <link rel="stylesheet" href="/resources/css/login.css" type="text/css">
+</head>
+
+<% if(!locals.utilizator) { %>
+    <div class="form-contain">
+        <form id="form_inreg"  method="post" class="date"  action="/login"  enctype="multipart/form-data">
+            <p class="p-design">
+                <label id="label-username"  class="label-design">
+                    Username: <input class="inp-design" type="text" name="username" id="inp-username" value="" required pattern="[A-Za-z0-9]+">
+                </label>
+            </p>
+            <p class="p-design">
+                <label id="label-password" class="label-design">
+                    Parola: <input class="inp-design" id="parl" type="password" required  name="parola" value="">
+                </label>
+            </p>
+            <p><input class="btn btn-outline-success" type="submit" value="Logare"></p>
+        </form>
+        <a href="forgot_password"><p><input class="btn btn-outline-danger" type="button" value="Ai uitat parola?"></p></a>
+    </div>
+   
+<% }  %>
+<p><%- locals.mesajLogin %></p>

@@ -16,7 +16,11 @@
   </head>
     <body>
     <%- include("../fragments/header.ejs") %>
+    
     <main class="contain-main">
+
+      <%- include("../fragments/formular-login.ejs") %>
+      <%- include("../fragments/afisare_poza.ejs") %>
         <div id="grid-pagina">
             <section id="welcome" class="contain-section">
               <div id="text">
@@ -199,7 +203,7 @@
             </section>
               <section class="contain-section" id="users">
                 <h2 class="subTitle">Online users</h2>
-                <p class="paragraph_design">Ip: <%- locals.ip %></p>
+                <%- include("../fragments/useri-online.ejs") %>
                 <p class="paragraph_design">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
                    eu fugiat nulla pariatur. Excepteur sint occaecat 

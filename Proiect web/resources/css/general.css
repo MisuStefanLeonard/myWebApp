@@ -259,3 +259,71 @@ video::cue {
     line-height:60px;
     font-weight: bold;
   }
+
+/* COOKIES */
+/* COOKIES */
+/* COOKIES */
+/* COOKIES */
+  
+.disclaimer {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 25vw; 
+  height: 25vw; 
+  padding: 10px;
+  background-color: orangered; 
+  color: #FFFFFF; 
+  opacity: 0;
+  transition: opacity 1s, transform 1s, background-color 1s;
+  transform-origin: bottom left;
+  font-size: 2vw; 
+  text-align: center;
+}
+
+
+@keyframes showBanner {
+  0% {
+      opacity: 0;
+      transform: scale(0) translate(0, 0);
+      background-color: rgba(76, 175, 80, 0); /
+  }
+  100% {
+      opacity: 0.75; 
+      transform: scale(1) translate(0, 0);
+      background-color: orangered(76, 175, 80, 1); 
+  }
+}
+
+
+@keyframes showButton {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+
+#ok_cookies {
+  background-color: black;
+  border: none;
+  color: yellow;
+  cursor: pointer;
+  outline: none;
+  opacity: 1;
+}
+
+
+#ok_cookies:hover {
+  color: var(--culoare-border-navigatie);
+}
+
+
+.show {
+  display: block;
+  animation: showBanner 5s forwards, showButton 5s forwards;
+}
+

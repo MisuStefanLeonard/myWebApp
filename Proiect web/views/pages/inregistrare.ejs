@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html  lang="ro">
+    <head>
+        <meta name="description" content="Cofetaria Dulcelind - înregistrare utilizatori.">
+        <meta name="keywords" content="cofetarie, Dulcelind, inregistrare, utilizatori">
+        <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+        <title>Register </title>
+        <%- include("../fragments/head") %>     
+        <script type="text/javascript" src=/resources/js/inregistrare.js></script>
+    </head>
+    <body>
+    <%- include("../fragments/header") %>
+
+    <main>
+    <div class="afisaj">
+        <% if(!locals.raspuns) { %>    
+
+			<%-include("../fragments/formular", {action: "/inregistrare"}) %>
+        <% } %>
+        
+	<% if(locals.raspuns) { %>
+	<%- locals.raspuns+"<br/>"%>
+	<% } %>
+    </div>
+</main>
+
+<footer>
+    <%- include("../fragments/footer") %>
+</footer>
+
+</body>
+</html>

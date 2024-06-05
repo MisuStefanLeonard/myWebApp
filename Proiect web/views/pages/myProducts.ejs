@@ -7,9 +7,10 @@
         <title>Metarax - produse</title>
         <%- include("../fragments/head") %>     
         <script type="text/javascript" src=/resources/js/myProducts.js></script>
-
+        <script type="text/javascript" src=/resources/js/produse-cos.js></script>
     </head>
     <body>
+        
     <%- include("../fragments/header") %>
 
     <main>
@@ -68,6 +69,14 @@
         </div>
         
         <p>
+        <div>
+            <label class="contain-filters">
+                Salvează filtrare: <input type="checkbox" id="save-filters">
+            </label>
+        </div>
+       
+        
+        
         <button id="filtrare" class="btn btn-outline-warning">Filtreaza</button> 
 
         <button id="resetare" class="btn btn-outline-warning">Reseteaza</button><br/>
@@ -79,9 +88,20 @@
         <hr>
         
         <button id="calcul-cost" class="btn btn-outline-danger">Calculeaza costul produselor</button>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Detalii produs</h2>
+                <div id="productDetails"></div>
+            </div>
+        </div>
+
         <section id="produse">
             <h2>Produse</h2>
+            <div id="dummy"></div>
             <div class="grid-produse">
+                
                 <% for( let prod of locals.produse) { %>
                     <article class="produs" >
                         <h3 class="nume">Nume: <a href="/myProduct/<%-prod.id_produs %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>

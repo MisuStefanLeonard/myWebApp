@@ -1,0 +1,18 @@
+.form-contain{
+    text-align: center;
+    padding: 3em;
+    border: 2px solid orange;
+    box-shadow: 2px 2px 5px 5px orange;
+}
+
+.p-design{
+    font-size: 16px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+}
+
+
+.inp-design{
+    padding-left: 0.5em;
+    width: 100%;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>Edit Products</title>
+    <link rel="stylesheet" href="/resources/css/edit_products.css">
+    <link rel="stylesheet" href="/resources/css/formular.css" type="text/css">
+    <%- include("../fragments/head") %>
+</head>
+<body >
+    <header>
+        <%- include("../fragments/header") %>
+    </header>
+    <main class="main-contain">
+        <h2>Produse</h2>
+
+        <table id="produse">
+            <tr>
+                <th>Id_produs</th>
+                <th>Nume</th>
+                <th>Pret</th>
+                <th>Tip_produs</th>
+                <th>Categorie</th>
+                <th>Masa</th>
+                <th>Dimensiune</th>
+                <th>Uz_multiplu</th>
+                <th>Reparat</th>
+                <th>Optiuni</th>
+            </tr>
+
+            <% for (var i = 0; i < produse.length; i++) { %>
+                <tr>
+                    <td><%= produse[i].id_produs %></td>
+                    <td><%= produse[i].nume %></td>
+                    <td><%= produse[i].pret %></td>
+                    <td><%= produse[i].tip_produs %></td>
+                    <td><%= produse[i].categorie %></td>
+                    <td><%= produse[i].masa %></td>
+                    <td><%= produse[i].dimensiune %></td>
+                    <td><%= produse[i].uz_multiplu ? 'Da' : 'Nu' %></td>
+                    <td><%= produse[i].reparat %></td>
+                    <td>
+                        <button type="button" style="font-size: 15px;color: green;" data-id="<%= produse[i].id_produs %>" onclick="updateProduct(this)">Modifica</button> /
+                        <button type="button" style="font-size: 15px;color: red;" data-id="<%= produse[i].id_produs %>" onclick="deleteProduct(this)">Sterge</button>
+                    </td>
+                </tr>
+            <% } %>
+        </table>
+        <div style="margin-top: 5em; margin-bottom: 5em;">
+            <h2>Adaugare produs</h2>
+        <div class="father-form-contain">
+            <div class="child-form-contain">
+                <form id="adaugare" method="post" action="/adauga_produs" enctype="multipart/form-data">
+                    <p class="label-design">
+                        <label>
+                            Nume: <input type="text" name="nume_prod" value="">
+                        </label>
+                    </p>
+                    <p class="label-design">
+                        <label>
+                            Descriere: <input type="text" name="descriere" value="">
+                        </label>
+                    </p >
+                    <p class="label-design">
+                        <label>
+                            Pret: <input type="number" name="pret" value="">
+                        </label>
+                    </p>
+                    <p class="label-design">
+                        <label>Tip produs:
+                            <select id="inp-tip">
+                                <option id="sel-toate" selected value=""></option>
+                                <% for (let opt of locals.tip) { %>
+                                    <option value="<%- opt.unnest %>"><%- opt.unnest %> </option>
+                                <% } %>
+                            </select>
+                        </label>
+                    </p>
+                    <p class="label-design">
+                    <label>Categorie produs:
+                        <select id="inp-categorie">
+                            <option id="sel-toate" selected value=""></option>
+                            <% for (let opt of locals.categorie) { %>
+                                <option value="<%- opt.unnest %>"><%- opt.unnest %> </option>
+                            <% } %>
+                        </select>
+                    </label>
+                    </p>
+                    <p class="label-design">
+                        <label>
+                            Masa: <input type="number" name="masa" value="">
+                        </label>
+                    </p>
+                    <p class="label-design">
+                        <label>
+                            Dimensiune: <input type="number" name="dimensiune" value="">
+                        </label>
+                    </p>
+                    <p class="label-design">
+                        <label>
+                            Specificatii tehnice: <input type="text" name="specificatii" value="">
+                        </label>
+                    </p>
+                    <div>
+                        Uz multiplu:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
+                        <div style="display: inline-flex;">
+                            <p><label>Da
+                                <input id="input_masa_da"  name="gr_rad_uz" value="true"  type="radio"/>
+                            </label></p>
+                            <p><label>Nu
+                                <input id="input_masa_nu"  name="gr_rad_uz" value="false"  type="radio"/>
+                            </label>
+                        </div>
+                    
+                    </div>
+                    <div>
+                        Reparat:<!-- trebuie sa aiba acelasi name ca sa formeze un grup -->
+                        <div style="display: inline-flex;">
+                            <p><label>Da
+                                <input id="input_reparat_da"  name="gr_rad_reparat" value="true"  type="radio"/>
+                            </label></p>
+                            <p><label>Nu
+                                <input id="input_reparat_da"  name="gr_rad_reparat" value="false"  type="radio"/>
+                            </label>
+                        </div>
+                    
+                    </div>
+                    
+                    <p class="label-design">
+                        <label>
+                            Poza: <input type="file" name="poza" class="btn btn-outline-warning">
+                        </label>
+                    </p>
+                            
+                    <input type="submit" value="Adauga" class="btn btn-outline-danger" >
+                </form>
+            </div>
+        </div>
+        
+        </div>
+        
+    </main>
+
+    <%- include("../fragments/footer") %>
+</body>
+</html>
